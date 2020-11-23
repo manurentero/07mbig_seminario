@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="script.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <HEAD>
+ <TITLE>Trabajo seminario</TITLE>
+ <STYLE type="text/css">
+  H1 { text-align: center}
+ </STYLE>
+<BODY>
+ <H1> La tienda de videojuegos  </H1>
+  </head>
+  <body>
+    <fieldset style="border: 1px black solid">
+
+      <legend style="border: 1px black solid;margin-left: 1em; padding: 0.2em 0.8em ">Trabajo Seminario - 07MBIG - 2020/2021</legend>
+
+      Autor: Manuel Rentero García<br />
+      Github: <a href="https://github.com/manurentero">github</a><br />
+      Email: <a href = "mailto: manuelrus15@gmail.com">manuelrus15@gmail.com</a>
+      
+    </fieldset>
+
+    <h1>Introducción</h1>
+    <p>Este trabajo va dirigido a vendedores de videojuegos. En él se cuenta a través de una base de datos obtenida de <a href="https://data.world/julienf/video-games-global-sales-in-volume-1983-2017">data.worldy</a> y gráficas obtenida de la misma base de datos cómo podríamos intuir qué juegos anunciados, para su próxima venta, serían los que tendrían mayor tirada entre los consumidores. <br /><br />
+    
+    Como consumidor de la industria del videojuego puedo decir que no siempre aquellos lanzamientos ambientados en el género más exitoso de los últimos meses son los que más triunfan. Incluso las franquicias más experimentadas como Activision y su título "Call of Duty" han tenido ediciones muy criticadas y con malas ventas debido a la calidad del producto. En otras ocasiones, sin embargo, un juego que es totalmente desconocido bate records de ventas en el mercado que nadie se esperaba. Estos juegos, a la hora de tratarlos como datos se pueden considerar como outliers.<br /><br />
+
+    <h1>Desarrollo</h1>
+    En primer lugar, si tuvieramos que comprar juegos para nuestra tienda nos interesaría saber cuales son los géneros más populares en este sector. Para ello primero vamos a ver cuántos juegos, del total de este conjunto de datos, se han creado de cada género. Utilizaremos para ello un gráfico de anillo (realizado en Google Sheets) con el que representamos los porcentajes correspondientes al número total de juegos en cada género.
+    </p>
+
+    <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRKI47Ru7i04fQomDmmFYyZM7OlHhAOt3ePkhtGUeWXxb41ZOdQ8JsMkWmehW-X1lGosNP6BHxUjB2F/pubchart?oid=1347904030&amp;format=interactive"></iframe> <br />
+
+    <p>Como se puede obserar los géneros con mayor producción han sido los de acción, de deporte, musicales, disparos, etc. En principio esto ya nos da una idea de qué se puede demandar más en nuestra tienda viendo la producción de las compañias en los distintos géneros.<br /><br />
+    Podemos acabar muy engañados si pensamos que los juegos en general, al ser un sector a la alza, se venden como regla general bien. Aunque los juegos de este dataset son de variadas épocas y la producción ha subido, podemos observar que la distribución de la venta de juegos para las tres zonas geográficas con mayor consumo a nivel mundial, se encuentra en valores bajos en ventas. Esto lo podemos visualizar con el boxplot (realizado en R con ggplot2), en donde se aprecia que los rangos intercuartílicos para las cuatro zonas se encuentran en rangos no muy altos de ventas (menos de 200,000)
+
+    </p>
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/dfX0p0b/boxplot-image.png" alt="boxplot-image" border="0"></a> <br/>
+    <p>También nos puede ser de mucho interés saber cuáles son las empresas con mas ventas en todo el mercado. De esta forma la compra de un juego procedente de una de estas empresas es un seguro de que el juego va a tener mayor probabilidad de ser comprado. Pero no solo eso, nos vamos a fijar también en cúales son los géneros preferidos por estas empresas que más copias venden. Para comparar no solo el volumen de ventas entre cada empresa si no también la cantidad de copias vendidas de cada género por empresa utilizaremos un gráfico de columnas apiladas (creado en python con matplotlib)</p>
+    
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/kgb2x9f/ndice.png" alt="ndice" border="0"></a> <br />
+
+    <p>Como s epuede ver la compañía que más vende es Nintendo y sus géneros favoritos son juegos de rol, deporte, carreras, música, etc. En otras compañias como EA vemos que el género con mayor tirada es el deporte, debido a su famoso juego FIFA. Otras compañias como Activision han vendido muchos juegos de plataforma gracias a títulos como su famoso Crash Bandicoot. Por lo que podemos afirmar que secuelas o remakes de estos títulos van a tener un gran impacto no solo entre nuevos jugadores si no también entre los veteranos.<br/><br/>
+    Como también se sabe, algunos juegos salen antes en USA que en Europa. Como vendedores de juegos podemos anticiparnos a no comprar un producto que no tenga mucha tirada si vemos su evolución en otro país donde se ha lanzado antes. En este caso lo que podemos hacer es realizar una regresión lineal y establecer, mediante datos históricos, una regla sencilla (ecuación de la recta de ajuste) que nos permita saber cómo se venderá un juego en EU según las ventas en USA. Para ello realizamos un scatterplot al que aplicamos una regresión lineal (realizado en R con ggplot2)
+
+
+    </p>
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/ZdDcTmN/regresion.png" alt="regresion" border="0"></a> <br />
+    <p>Donde la regla nos dice que en Europa un juego debería venderse de media en unas 31 mil copias y que por cada millón de copias vendidas de un juego en USA, se espera una venta de 434 mil copias más en Europa.</p>
+    <a href="https://imgbb.com/"><img src="https://i.ibb.co/Ks0hGzc/slope.png" alt="slope" border="0"></a>
+  </body>
+</html>
